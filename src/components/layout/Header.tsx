@@ -10,6 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { useState } from "react"
+import { ModeToggle } from "@/components/mode-toggle"
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -31,7 +32,7 @@ export function Header() {
               AI Clone Target
             </span>
           </Link>
-          <nav className="flex items-center gap-6 text-sm">
+          <nav className="flex items-center gap-6 text-sm mr-4">
             {navLinks.map((link, idx) => (
               <a
                 key={idx}
@@ -42,6 +43,7 @@ export function Header() {
               </a>
             ))}
           </nav>
+          <ModeToggle />
         </div>
 
         {/* Mobile Nav */}
@@ -52,11 +54,13 @@ export function Header() {
             </span>
           </Link>
 
-          <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-md hover:bg-muted hover:text-foreground">
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle Menu</span>
-            </DialogTrigger>
+          <div className="flex items-center gap-2">
+            <ModeToggle />
+            <Dialog open={open} onOpenChange={setOpen}>
+              <DialogTrigger className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-md hover:bg-muted hover:text-foreground">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle Menu</span>
+              </DialogTrigger>
             <DialogContent className="sm:max-w-44 w-[80vw] left-0 translate-x-0 h-full max-h-screen rounded-none top-0 translate-y-0 data-[state=closed]:slide-out-to-left-1/2 data-[state=open]:slide-in-from-left-1/2">
               <DialogHeader>
                 <DialogTitle className="text-left font-bold">Navigation</DialogTitle>
@@ -75,6 +79,7 @@ export function Header() {
               </div>
             </DialogContent>
           </Dialog>
+          </div>
         </div>
       </div>
     </header>
