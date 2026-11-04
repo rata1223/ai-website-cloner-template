@@ -49,6 +49,14 @@
 }
 
 :root {
+  /*
+   * SITE THEME INSTRUCTIONS:
+   * 1. Inspect the target website to find its primary background, text, and brand colors.
+   * 2. Convert those hex/rgb values to oklch (e.g. using an online tool or color picker).
+   * 3. Replace the placeholder values below with the target site's actual colors.
+   */
+
+  /* Core Colors */
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -84,6 +92,13 @@
 }
 
 .dark {
+  /*
+   * DARK MODE THEME INSTRUCTIONS:
+   * 1. If the target site supports dark mode, extract those colors.
+   * 2. If it does not, you can leave these as reasonable defaults or manually invert the light mode colors.
+   */
+
+  /* Core Colors */
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
