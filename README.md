@@ -134,6 +134,15 @@ npm run typecheck # TypeScript check
 npm run check  # Run lint + typecheck + build
 ```
 
+### Downloading Assets
+
+When cloning a website, use the included utility script to download assets (images, fonts, SVGs) into the correct public directory:
+
+```bash
+npx tsx scripts/download-assets.ts <site_name> <asset_url> <filename>
+# Example: npx tsx scripts/download-assets.ts example https://example.com/logo.png logo.png
+```
+
 ### If using docker
 
 ```bash

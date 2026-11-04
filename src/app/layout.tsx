@@ -17,6 +17,19 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Website Clone",
   description: "Pixel-perfect website clone",
+  openGraph: {
+    title: "Website Clone",
+    description: "Pixel-perfect website clone",
+    type: "website",
+    // url: "https://your-domain.com",
+    // images: [{ url: "/sites/example/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Website Clone",
+    description: "Pixel-perfect website clone",
+    // images: ["/sites/example/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
