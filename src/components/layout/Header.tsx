@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { Menu } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -16,9 +17,10 @@ export function Header() {
   const [open, setOpen] = useState(false)
 
   const navLinks = [
-    { href: "#", label: "Docs" },
-    { href: "#", label: "Features" },
-    { href: "#", label: "Pricing" },
+    { href: "#", label: "주식" },
+    { href: "#", label: "가상화폐" },
+    { href: "#", label: "커뮤니티" },
+    { href: "#", label: "프리미엄" },
   ]
 
   return (
@@ -26,24 +28,38 @@ export function Header() {
       <div className="container flex h-14 items-center justify-between">
 
         {/* Desktop Nav */}
-        <div className="mr-4 hidden md:flex items-center">
-          <Link className="mr-6 flex items-center space-x-2" href="/">
-            <span className="hidden font-bold sm:inline-block">
-              AI Clone Target
-            </span>
-          </Link>
-          <nav className="flex items-center gap-6 text-sm mr-4">
-            {navLinks.map((link, idx) => (
-              <a
-                key={idx}
-                className="transition-colors hover:text-foreground/80 text-foreground/60"
-                href={link.href}
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-          <ModeToggle />
+        <div className="mr-4 hidden md:flex items-center w-full justify-between">
+          <div className="flex items-center">
+            <Link className="mr-6 flex items-center space-x-2" href="/">
+              <img src="/sites/alphasquare/logo.png" alt="AlphaSquare" className="h-6 w-6" />
+              <span className="hidden font-bold sm:inline-block text-xl">
+                AlphaSquare
+              </span>
+            </Link>
+            <nav className="flex items-center gap-6 text-sm font-semibold">
+              {navLinks.map((link, idx) => (
+                <a
+                  key={idx}
+                  className="transition-colors hover:text-primary text-foreground"
+                  href={link.href}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="종목명 또는 심볼을 입력하세요"
+                className="w-64 rounded-full border border-border bg-muted px-4 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+              />
+            </div>
+            <ModeToggle />
+            <Button variant="outline" size="sm" className="font-semibold">로그인</Button>
+            <Button size="sm" className="font-semibold">시작하기</Button>
+          </div>
         </div>
 
         {/* Mobile Nav */}
