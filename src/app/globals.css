@@ -49,13 +49,21 @@
 }
 
 :root {
+  /*
+   * SITE THEME INSTRUCTIONS:
+   * 1. Inspect the target website to find its primary background, text, and brand colors.
+   * 2. Convert those hex/rgb values to oklch (e.g. using an online tool or color picker).
+   * 3. Replace the placeholder values below with the target site's actual colors.
+   */
+
+  /* Core Colors */
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(0.55 0.22 25); /* AlphaSquare Red #dd2626 */
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -63,7 +71,7 @@
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
+  --destructive: oklch(0.55 0.22 25);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
@@ -84,6 +92,13 @@
 }
 
 .dark {
+  /*
+   * DARK MODE THEME INSTRUCTIONS:
+   * 1. If the target site supports dark mode, extract those colors.
+   * 2. If it does not, you can leave these as reasonable defaults or manually invert the light mode colors.
+   */
+
+  /* Core Colors */
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);

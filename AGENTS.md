@@ -26,6 +26,7 @@ A reusable template for reverse-engineering any website into a clean, modern Nex
 - `npm run lint` — ESLint check
 - `npm run typecheck` — TypeScript check
 - `npm run check` — Run lint + typecheck + build
+- `npx tsx scripts/download-assets.ts <site_name> <asset_url> <filename>` — Download an asset to `public/sites/<site_name>/<filename>`
 
 ## Code Style
 - TypeScript strict mode, no `any`
@@ -45,6 +46,7 @@ A reusable template for reverse-engineering any website into a clean, modern Nex
 src/
   app/              # Next.js routes
   components/       # React components
+    layout/         # Shared layouts (Header, Footer)
     ui/             # shadcn/ui primitives
     sites/<site>/   # Source-specific components, including extracted SVGs
   lib/
